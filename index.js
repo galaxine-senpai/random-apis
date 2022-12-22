@@ -2,10 +2,13 @@
 
 const express = require('express')
 const app = express()
+
+// API Stuff
 const fortunesfile = require('./apistuff/fortunes.json')
 const animalnoisesfile = require('./apistuff/animalnoises.json')
+const complimentsfile = require('./apistuff/compliments.json')
 
-var apiendpoints = ["fortune", "animalnoises"]
+var apiendpoints = ["fortune", "animalnoises","compliments"]
 var morgan = require('morgan')
 
 app.use(morgan(':method :url :status :response-time ms - :remote-addr'))
@@ -34,6 +37,13 @@ app.get('/api/v1/animalnoises/', (req, res) => {
     var randomAnimalNoises = animalnoises[Math.floor(Math.random() * animalnoises.length)];
     // console.log(randomAnimalNoises)
     res.send(randomAnimalNoises)
+})
+
+app.get('/api/v1/compliments', (req, res) => {
+    let compliments = complimentsfile.compliments
+    var randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+    // console.log(randomCompliment)
+    res.send(randomCompliment)
 })
 
 app.listen(3000, () => {
