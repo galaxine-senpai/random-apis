@@ -47,5 +47,5 @@ app.get('/api/v1/compliments', (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log('Stupid API\'s listening on port 3000!')
+    console.log('Random API\'s listening on port 3000!')
 });
