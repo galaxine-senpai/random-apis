@@ -1,0 +1,19 @@
+{
+    "noises" : [
+        {
+            "noise" : "woof"
+        },
+        {
+            "noise": "meow"
+        },
+        {
+            "noise": "moo"
+        },
+        {
+            "noise": "quack"
+        },
+        {
+            "noise": "oink"
+        }
+    ]
+}
