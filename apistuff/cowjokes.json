@@ -1,0 +1,23 @@
+{
+    "jokes": [
+        {
+            "joke": "What do you call a cow with no legs? Ground beef!"
+        },
+        {
+            "joke": "What do you call a cow with two legs? Lean beef!"
+        },
+        {
+            "joke": "What do you call a cow with three legs? Tri-tip!"
+        },
+        {
+            "joke": "What do you call a cow with four legs? Steak!"
+        },
+        {
+            "joke": "What do you call a cow with five legs? A cow with five legs!"
+        },
+        {
+            "joke": "What do you call a person who is afraid of cows? A cow-a-phobe!"
+        }
+
+    ]
+}

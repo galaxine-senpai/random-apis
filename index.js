@@ -7,6 +7,7 @@ const app = express()
 const fortunesfile = require('./apistuff/fortunes.json')
 const animalnoisesfile = require('./apistuff/animalnoises.json')
 const complimentsfile = require('./apistuff/compliments.json')
+const cowjokesfile = require('./apistuff/cowjokes.json')
 
 var apiendpoints = ["fortune", "animalnoises","compliments"]
 var morgan = require('morgan')
@@ -44,6 +45,13 @@ app.get('/api/v1/compliments', (req, res) => {
     var randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
     // console.log(randomCompliment)
     res.send(randomCompliment)
+})
+
+app.get('/api/v1/cowjokes', (req, res) => { // Yes this is entirely for cow jokes, blame GitHub Copilot not me
+    let cowjokes = cowjokesfile.cowjokes
+    var randomCowJoke = cowjokes[Math.floor(Math.random() * cowjokes.length)];
+    // console.log(randomCowJoke)
+    res.send(randomCowJoke)
 })
 
 app.listen(3000, () => {
