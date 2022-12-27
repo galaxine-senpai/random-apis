@@ -1,18 +1,22 @@
-// console.log("Hello World!");
-
+//imports
 const express = require('express')
 const app = express()
+const dotenv = require('dotenv')
+dotenv.config()
 
-// API Stuff
+// The very lazy way of getting each .json file
 const fortunesfile = require('./apistuff/fortunes.json')
 const animalnoisesfile = require('./apistuff/animalnoises.json')
 const complimentsfile = require('./apistuff/compliments.json')
 const cowjokesfile = require('./apistuff/cowjokes.json')
 
-var apiendpoints = ["fortune", "animalnoises","compliments", "cowjokes"]
-var morgan = require('morgan')
 
-app.use(morgan(':method :url :status :response-time ms - :remote-addr'))
+
+var apiendpoints = ["fortune", "animalnoises","compliments", "cowjokes"]
+var morgan = require('morgan') // Used for logging
+var port = process.env.PORT || 3000 // Defines what port to use, if not defined in .env file then it will use 3000
+
+app.use(morgan(':method :url :status :response-time ms - :remote-addr')) // Used for logging
 
 app.get('/', (req, res) => {
     res.redirect('/api/');
@@ -54,6 +58,6 @@ app.get('/api/v1/cowjokes', (req, res) => { // Yes this is entirely for cow joke
     res.send(randomCowJoke)
 });
 
-app.listen(3000, () => { // Will change this eventually to auto use port 80
-    console.log('Random API\'s listening on port 3000!')
+app.listen(port, () => { // Changed to use a .env file instead for customisability :)
+    console.log(`Random API\'s listening on port ${port}!`)
 });
