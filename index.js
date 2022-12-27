@@ -9,7 +9,7 @@ const animalnoisesfile = require('./apistuff/animalnoises.json')
 const complimentsfile = require('./apistuff/compliments.json')
 const cowjokesfile = require('./apistuff/cowjokes.json')
 
-var apiendpoints = ["fortune", "animalnoises","compliments"]
+var apiendpoints = ["fortune", "animalnoises","compliments", "cowjokes"]
 var morgan = require('morgan')
 
 app.use(morgan(':method :url :status :response-time ms - :remote-addr'))
